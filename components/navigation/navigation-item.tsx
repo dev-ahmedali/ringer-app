@@ -19,10 +19,9 @@ export const NavigationItem = ({
   const params = useParams();
   const router = useRouter();
 
-  
   const onClick = () => {
     router.push(`/servers/${id}`);
-  }
+  };
 
   return (
     <ActionTooltip side="right" align="center" label={name}>
@@ -37,14 +36,12 @@ export const NavigationItem = ({
         <div
           className={cn(
             "relative flex group mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] transition-all overflow-hidden",
-            params?.serverId === id && "bg-primary/10 text-primary rounded-[16px]"
-          )}
-        />
-        <Image
-          fill
-          src={imageUrl}
-          alt="Channel"
-        />
+            params?.serverId === id &&
+              "bg-primary/10 text-primary rounded-[16px]",
+          )}>
+          {" "}
+          <Image src={imageUrl} alt="Channel" fill />
+        </div>
       </button>
     </ActionTooltip>
   );
